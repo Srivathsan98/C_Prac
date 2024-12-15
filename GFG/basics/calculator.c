@@ -18,9 +18,9 @@ complex add(complex x, complex y)
 int main()
 {
     complex n, m, sum;
-    int x, y, a;
+    int x, y, a, u;
     float z, w;
-    printf("what to calculate\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Square\n6. Cube\n7. x^y\n8. sq root\n9. cuberoot\n10. percentage\n11. pythogoras\n12. complex sum");
+    printf("what to calculate\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Square\n6. Cube\n7. x^y\n8. sq root\n9. cuberoot\n10. percentage\n11. pythogoras\n12. complex sum\n13. rectangle area\n14. perimeter of rectangle\n15.simpleinterest\n16.compundinterest");
     scanf("%d", &a);
     if(a == 12)
     {
@@ -33,6 +33,16 @@ int main()
         scanf("%d",&n.img);
         printf("m.img=");
         scanf("%d", &m.img);
+    }
+    else if(a == 15 || a == 16)
+    {
+        printf("enter 3 nos:\n");
+        printf("x:");
+        scanf("%d", &x);
+        printf("\ny:");
+        scanf("%d", &y);
+        printf("\nu:");
+        scanf("%d", &u);
     }
     else
     {
@@ -84,6 +94,20 @@ int main()
         break;
     case 12:
         sum = add(n,m);
+        break;
+    case 13:
+        z = x * y;
+        break;
+    case 14:
+        z = 2 * (x + y);
+        break;
+    case 15:
+        z = (x * y * u) / 100;
+        break;
+    case 16:
+        z = x * ((pow((1 + (float)y / 100), u)));
+        w = z - x;
+        break;
     default:
         break;
     }
