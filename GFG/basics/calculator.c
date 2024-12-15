@@ -4,7 +4,8 @@
 
 int main()
 {
-    int x, y, z, a, w;
+    int x, y, a;
+    float z, w;
     printf("enter 2 nos:\n");
     printf("x:");
     scanf("%d", &x);
@@ -47,7 +48,7 @@ int main()
         w = cbrt(y);
         break;
     case 10:
-        z = (x / y) * 100;
+        z = ((x * 100)  / y);
         break;
     case 11:
         z = sqrt((x^2) + (y^2));
@@ -55,6 +56,6 @@ int main()
     default:
         break;
     }
-    printf("z = %d", z);
-    printf("w = %d", w);
+    printf("z = %f\n", z);
+    printf("w = %f\n", w);
 }
