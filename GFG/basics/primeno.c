@@ -4,22 +4,25 @@
 #include <math.h>
 
 
-int prime(int a)
+bool prime(int a)
 {
     int count = 0;
     bool prime = false;
     if(a <= 1)
     {
-        printf("not a prime number\n");
+        // printf("not a prime number\n");
+        return false;
     }
     if(a == 2)
     {
-        printf("prime\n");
+        // printf("prime\n");
+        return true;
     }
 
     if(a % 2 == 0)
     {
-        printf("even");
+        // printf("even");
+        return false;
     }
 
     for (int i  = 3; i <= sqrt(a); i += 2)
@@ -27,17 +30,42 @@ int prime(int a)
         if(a % i == 0)
         {
             prime = false;
+            return false;
+        }
+        else
+        {
+            printf("%d is a prime\n", a);
+            return true;
         }
     }
 
-    if(prime)
+    // if(prime)
+    // {
+    //     printf("%d is a prime", a);
+    //     return true;
+    // }
+    // else
+    // {
+    //     // printf("it is not a prime\n");
+    //     return false;
+    // }
+}
+
+int listprime(int y)
+{
+    int x, j;
+    for (int i = 1; i <=y; i++)
     {
-        printf("%d is a prime", a);
+        if(prime(i) == true)
+        {
+            printf("%d\t", i);
+        }
+        // if(x != 0)
+        // {
+        //     j++;
+        // }
     }
-    else
-    {
-        printf("it is a prime\n");
-    }
+    // printf("no of prime nos  = %d\n", j);
 }
 int main()
 {
@@ -46,4 +74,5 @@ int main()
     scanf("%d", &x);
 
     prime(x);
+    listprime(x);
 }
