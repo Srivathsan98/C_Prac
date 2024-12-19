@@ -16,6 +16,20 @@ int findmax(int** arr, int r, int c)
     }
     return max;
 }
+
+int find1dmin(int* arr, int r)
+{
+    int min = arr[0];
+    int i,j;
+    for (i = 0; i < r; i++)
+    {
+        if(arr[i] < min)
+        {
+            min = arr[i];
+        }
+    }
+    return min;
+}
 int findmin(int** arr, int r, int c)
 {
     int min = arr[0][0];

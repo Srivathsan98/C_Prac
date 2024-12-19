@@ -7,6 +7,8 @@
 #include "arraycalculate.h"
 #include "bubblesort.h"
 #include "mergesort.h"
+#include "selectsort.h"
+#include "insertionsort.h"
 
 int rows, columns, value, number, dim, option;
 int **arr2;

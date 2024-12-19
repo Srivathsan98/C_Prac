@@ -36,7 +36,20 @@ int main()
         scanf("%d", &rows);
         arr1 = create1dArray(rows);
         print1darray(arr1, rows);
-        mergeSort(arr1, 0, rows - 1);
+        printf("etner type of sort\n1.merge\n2.selected\ninsert");
+        scanf("%d", &option);
+        if(option == 1)
+        {
+            mergeSort(arr1, 0, rows - 1);
+        }
+        else if(option == 2)
+        {
+            selectsort(arr1, rows);
+        }
+        else
+        {
+            insertsort(arr1, rows);
+        }
         print1darray(arr1, rows);
 
     }
