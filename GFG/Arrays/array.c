@@ -14,6 +14,7 @@ so we need to either declare them as fixed value either as a const or as a macro
 
 void array2dfind(int** arr, int row, int col, int val)
 {
+    position lastelemt;
     int max = findmax(arr2, rows, columns);
     printf("\nmax value in array = %d\n", max);
     int min = findmin(arr2, rows, columns);
@@ -24,6 +25,8 @@ void array2dfind(int** arr, int row, int col, int val)
     scanf("%d", &value);
     bool value = findvalue(arr2, rows, columns, value);
     printf("\n%d value in array = %s\n", value, value ? "true" : "false");
+    lastelemt = findlastelement(arr2, 0, rows, columns);
+    printf("\n%d last value and size = %d x %d\n", lastelemt.lastelement, lastelemt.rows, lastelemt.columns);
 }
 int main()
 {
@@ -36,7 +39,7 @@ int main()
         scanf("%d", &rows);
         arr1 = create1dArray(rows);
         print1darray(arr1, rows);
-        printf("etner type of sort\n1.merge\n2.selected\ninsert");
+        printf("etner type of sort\n1.merge\n2.selected\n3.insert\n4.duplicateremove\n5.mergearray\n6.removevalue");
         scanf("%d", &option);
         if(option == 1)
         {
@@ -46,11 +49,30 @@ int main()
         {
             selectsort(arr1, rows);
         }
-        else
+        else if(option == 3)
         {
             insertsort(arr1, rows);
         }
-        print1darray(arr1, rows);
+        else if(option == 4)
+        {
+            value = duplicate(arr1, rows, arr1);
+            print1darray(arr1, value);
+        }
+        else if(option == 5)
+        {
+            arr1 = merge1darray(rows, rows);
+            print1darray(arr1, (sizeof(arr1)/sizeof(arr1[0])));
+        }
+
+        else
+        {
+            printf("enter value to  find ");
+            scanf("%d", &value);
+            value = removevalue(arr1, rows, value, arr1);
+            print1darray(arr1, value);
+        }
+        // print1darray(arr1, rows);
+        
 
     }
     else
@@ -63,9 +85,9 @@ int main()
         arr2 = create2dArray(rows, columns);
         print2darray(arr2, rows, columns);
         array2dfind(arr2, rows, columns, value);
-        bubblesort(arr2, rows, columns);
-        printf("\nafter sorting\n");
-        print2darray(arr2, rows, columns);
+        // bubblesort(arr2, rows, columns);
+        // printf("\nafter sorting\n");
+        // print2darray(arr2, rows, columns);
         for (int i = 0; i < rows; i++)
         {
             free(arr2[i]);

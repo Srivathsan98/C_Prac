@@ -7,7 +7,7 @@ int* create1dArray(int a)
     int value = 1;
      for (int i = 0; i < a; i++)
     {
-        arr[i] = rand() % 100;
+        arr[i] = rand() * clock() % 100;
     }
     return arr;
 }

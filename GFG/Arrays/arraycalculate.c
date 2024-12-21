@@ -83,3 +83,36 @@ bool findvalue(int** arr, int r, int c, int value)
         return false;
     }
 }
+
+bool find1dvalue(int* arr, int r, int value)
+{
+    bool present = false;
+    int i,j;
+    for (i = 0; i < r; i++)
+    {
+        if(value == arr[i])
+        {
+            present = true;
+        }
+    }
+    if(present)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+
+
+position findlastelement(int** arr, int last, int r, int c)
+{
+    position position;
+    position.lastelement = arr[r - 1][c - 1];
+    position.rows = r;
+    position.columns = c;
+
+    return position;
+}

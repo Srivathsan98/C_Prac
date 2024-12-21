@@ -10,7 +10,14 @@ void selectsort(int arr[], int elements)
         printf("minimum = %d\n", minvalue);
         for(int j = i+1; j < elements; j++)
         {
-            if(arr[j] < arr[minvalue])
+            //for ascending order
+            // if(arr[j] < arr[minvalue])
+            // {
+            //     minvalue = j;
+            //     printf("j = %d\n", j);
+            // }
+            //for descending order
+            if(arr[j] > arr[minvalue])
             {
                 minvalue = j;
                 printf("j = %d\n", j);

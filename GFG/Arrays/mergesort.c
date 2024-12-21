@@ -72,3 +72,34 @@ void mergeSort(int arr[], int left, int right)
         merge(arr, left, mid, right);
     }
 }
+
+int* merge1darray(int elements1, int elements2)
+{
+    int* farray; 
+    farray = create1dArray(elements1);
+    print1darray(farray, (elements1));
+    int* sarray;
+    sarray = create1dArray(elements1);
+    printf("\n\n\n\n");
+    print1darray(sarray, (elements2));
+
+    int k = 0;
+    int* resarray = (int *)malloc((elements1 + elements2) * sizeof(int));
+
+    for(int i = 0; i<elements1; i++)
+    {
+        resarray[i] = farray[i];
+    }
+    printf("\n\n\n\n");
+    print1darray(resarray, (elements1 + elements2));
+    for(int j = 0; j<elements2; j++)
+    {
+        resarray[elements1 + j] = sarray[j];
+        // k++;
+    }
+    printf("\n\n\n\n");
+    print1darray(resarray, (elements1 + elements2));
+    printf("\n\n\n\n");
+
+    return resarray;
+}
