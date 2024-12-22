@@ -26,3 +26,37 @@ int** bubblesort(int **arr, int row, int col)
         }
     }
 }
+
+int** rowbubblesort(int **arr, int row, int col)
+{
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < col; j++)
+        {
+            for(int k = 0; k < col - j -1; k++)
+            {
+                if(arr[i][k] > arr[i][k + 1])
+                {
+                    swap(&arr[i][k], &arr[i][k + 1]);
+                }
+            }
+        }
+    }
+}
+
+int** colbubblesort(int **arr, int row, int col)
+{
+    for(int i = 0; i < col; i++)
+    {
+        for(int j = 0; j < row - 1; j++)
+        {
+            for(int k = 0; k < row - j -1; k++)
+            {
+                if(arr[k][i] > arr[k + 1][i])
+                {
+                    swap(&arr[k][i], &arr[k + 1][i]);
+                }
+            }
+        }
+    }
+}

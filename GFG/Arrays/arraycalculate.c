@@ -116,3 +116,35 @@ position findlastelement(int** arr, int last, int r, int c)
 
     return position;
 }
+
+int normal(int** arr, int rows, int columns)
+{
+    int value = 0;
+    int normal = 0;
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < columns; j++)
+        {
+            value += pow(arr[i][j], 2);
+        }
+    }
+
+    normal = sqrt(value);
+    return normal;
+}
+
+int trace(int** arr, int rows, int columns)
+{
+    int trace = 0;
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < columns; j++)
+        {
+            if(i == j)
+            {
+                trace += arr[i][j];
+            }
+        }
+    }
+    return trace;
+}

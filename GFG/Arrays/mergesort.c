@@ -91,14 +91,14 @@ int* merge1darray(int elements1, int elements2)
         resarray[i] = farray[i];
     }
     printf("\n\n\n\n");
-    print1darray(resarray, (elements1 + elements2));
+    // print1darray(resarray, (elements1 + elements2));
     for(int j = 0; j<elements2; j++)
     {
         resarray[elements1 + j] = sarray[j];
         // k++;
     }
     printf("\n\n\n\n");
-    print1darray(resarray, (elements1 + elements2));
+    // print1darray(resarray, (elements1 + elements2));
     printf("\n\n\n\n");
 
     return resarray;

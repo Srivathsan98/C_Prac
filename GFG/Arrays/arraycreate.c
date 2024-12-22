@@ -24,7 +24,7 @@ int** create2dArray(int a, int b)
     {
         for (int j=0; j< b; j++)
         {
-            arr[i][j] = rand() % 100;
+            arr[i][j] = rand() * clock() % 100;
         }
     }
     return arr;

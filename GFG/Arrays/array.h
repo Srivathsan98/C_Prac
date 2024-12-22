@@ -12,11 +12,15 @@
 #include "mergesort.h"
 #include "selectsort.h"
 #include "insertionsort.h"
-#include "duplicate.h"
+#include "operation.h"
+#include "rotation.h"
 
 int rows, columns, value, number, dim, option;
+int max, min, avg, count;
+bool state;
 int **arr2;
 int *arr1;
+position lastelemt;
 
 // typedef struct last
 // {
