@@ -48,10 +48,16 @@ void array2dfind(int** arr, int row, int col, int val)
         value = normal(arr2, rows, columns);
         printf("normal = %d\n", value);
     }
-    else
+    else if(option == 7)
     {
         value = trace(arr2, rows, columns);
         printf("trace = %d\n", value);
+    }
+    else
+    {
+        int right, left;
+        diagonal(arr2, rows, columns, &right, &left);
+        printf("right = %d\tleft=%d\n", right, left);
     }
 }
 int main()
@@ -179,9 +185,19 @@ int main()
             arr2 = boundary(arr2, rows, columns);
             print2darray(arr2, rows, columns);
         }
-        else
+        else if(option == 10)
         {
             matrixrotation(arr2, rows, columns);
+            print2darray(arr2, rows, columns);
+        }
+        else if(option == 11)
+        {
+            rowswap(arr2, rows, columns);
+            print2darray(arr2, rows, columns);
+        }
+        else if(option == 12)
+        {
+            colswap(arr2, rows, columns);
             print2darray(arr2, rows, columns);
         }
         for (int i = 0; i < rows; i++)

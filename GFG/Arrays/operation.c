@@ -267,3 +267,49 @@ int** boundary(int** arr, int rows, int columns)
     }
     return arr2;
 }
+
+int diagonal(int** arr, int rows, int columns, int *right, int* left)
+{
+    *right = 0;
+    *left = 0;
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < columns; j++)
+        {
+            if(i == j)
+            {
+                *right += arr[i][j];
+            }
+        }
+    }
+
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < columns; j++)
+        {
+            if((i + j) == (rows - 1))
+            {
+                printf("%d\n", arr[i][j]);
+                *left += arr[i][j];
+            }
+        }
+    }
+}
+
+int** colswap(int** arr, int rows, int columns)
+{
+    int j = 0;
+    for(int i = 0; i < rows; i++)
+    {
+        swap(&arr[i][j], &arr[i][columns - 1]);
+    }
+}
+
+int** rowswap(int** arr, int rows, int columns)
+{
+    int j = 0;
+    for(int i = 0; i < rows; i++)
+    {
+        swap(&arr[j][i], &arr[rows - 1][i]);
+    }
+}

@@ -23,5 +23,8 @@ int** transpose(int** arr, int rows, int columns);
 int** add2d(int rows, int columns);
 int** mul2d(int rows, int columns);
 int** boundary(int** arr, int rows, int columns);
+int diagonal(int** arr, int rows, int columns, int *right, int* left);
+int** rowswap(int** arr, int rows, int columns);
+int** colswap(int** arr, int rows, int columns);
 
 #endif
