@@ -58,11 +58,16 @@ char* binadd(char s1[], char s2[]) {
     // Process both strings from the end
     while (i >= 0 || j >= 0 || carry) {
         int n1 = (i >= 0) ? s1[i--] - '0' : 0;
+        printf("n1 = %d\n", n1);
         int n2 = (j >= 0) ? s2[j--] - '0' : 0;
-
+        printf("n2 = %d\n", n2);
+        printf("cary = %d\n", carry);
         temp = n1 + n2 + carry;
+        printf("temp = %d\n", temp);
         carry = temp / 2;
+        printf("carry = %d\n", carry);
         s3[k--] = (temp % 2) + '0';
+        printf("s3 = %d\n", (temp % 2) + '0');
     }
 
     // If the result starts with '0', shift the string
@@ -71,4 +76,150 @@ char* binadd(char s1[], char s2[]) {
     }
 
     return s3;
+}
+
+//for returning multiple nonrpts as a string
+char* nonrepeatcharac(char s1[])
+// char nonrepeatcharac(char s1[]) for returngina string
+{
+    int size = strlen(s1);
+    char* s2 = (char*)malloc(size + 1);
+    int k = 0;
+    for(int i = 0; i < size; ++i)
+    {
+        int found = 0;
+
+        for(int j = 0; j < size; ++j)
+        {
+            if(i != j && s1[i] == s1[j])
+            {
+                found = 1;
+                break;
+            }
+        }
+
+        if(found == 0)
+        {
+            s2[k++] = s1[i];
+            // s1[i]; for retrungina single character
+        }
+    }
+    s2[k] = '\0';
+    if(s2[0] == '\0')
+    {
+        return "$";
+    }
+    else
+    {
+    return s2;
+    }
+
+    
+}
+
+char* concat(char s1[], char s2[])
+{
+    int i = 0;
+
+    while(s1[i] != '\0')
+    {
+        i++;
+    }
+
+    int j = 0;
+    while(s2[j] != '\0')
+    {
+        s1[i] = s2[j];
+        i++;
+        j++;
+    }
+
+    s1[i] = '\0';
+
+    return s1;
+}
+
+char* firstword(char s1[])
+{
+    int size = strlen(s1);
+
+    char* s2 = (char*)malloc(size + 1);
+    int k = 0;
+    int flag = 1;
+
+    for(int i = 0; i < size; i++)
+    {
+        if(s1[i] != ' ' && flag)
+        {
+            s2[k++] = s1[i];
+            // s2[k+1] = ' ';
+            // s2[k++];
+            flag = 0;
+        }
+        else if(s1[i] == ' ')
+        {
+            flag = 1;
+        }
+    }
+    return s2;
+}
+
+void nonzeros(char s1[])
+{
+    int i, c = -1; 
+    
+    // finding the all leading zeroes from the given string 
+    // and removing it from the string 
+    for (i = 0; i < strlen(s1); i++) { 
+        if (s1[i] != '0') { 
+            c = i; 
+            break; 
+        } 
+    } 
+    // printing the string again after removing the all 
+    // zeros 
+    for (i = c; i < strlen(s1); i++) { 
+        printf("%c", s1[i]); 
+    } 
+}
+
+void unicode(char s1[])
+{
+    int code; 
+  printf("The String is %s\n",  
+          s1); 
+    
+  for (int i = 0; s1[i] != '\0'; i++)  
+  { 
+    code = s1[i]; 
+    printf("The Unicode Code Point At %d is:%d\n",  
+            i, code); 
+  } 
+}
+
+void split(char s1[], char dem[])
+{
+    int size = strlen(s1);
+    int i = 0, j = 0;
+    char sub[100];
+    while(s1[i] != '\0')
+    {
+        if(s1[i] != dem[0])
+        {
+            sub[j++] = s1[i];
+        }
+        else
+        {
+            sub[j] = '\0';
+            printf("sub   = %s", sub);
+
+            j = 0;
+        }
+        i++;
+    }
+    if(j > 0)
+    {
+        sub[j] = '\0';
+        printf("sub = %s\n", sub);
+    }
 }
