@@ -116,7 +116,7 @@ int main()
             arr3 = copyelements(arr1, rows);
             print1darray(arr3, rows);
         }
-        else
+        else if(option == 9)
         {
             printf("enter value to  rotate ");
             scanf("%d", &value);
