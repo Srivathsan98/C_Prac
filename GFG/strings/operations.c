@@ -223,3 +223,24 @@ void split(char s1[], char dem[])
         printf("sub = %s\n", sub);
     }
 }
+
+void stringsort(char** arr, int n)
+{
+    int i, j;
+    char* temp;
+    temp = (char*)calloc(100, sizeof(char));
+    for(i = 0; i < n - 1; i++)
+    {
+        for(j = 0; j < n - i - 1; j++)
+        {
+            if(strcmp(arr[j], arr[j + 1]) > 0)
+            {
+                
+                strcpy(temp, arr[j]);
+                strcpy(arr[j], arr[j + 1]);
+                strcpy(arr[j + 1], temp);
+            }
+        }
+    }
+    free(temp);
+}

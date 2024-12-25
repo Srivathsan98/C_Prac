@@ -6,11 +6,11 @@
 #include <stdbool.h>
 #include <string.h>
 
-#include "selectsort.h"
+
 #include "arrayprint.h"
 #include "arraycalculate.h"
 #include "arraycreate.h"
-#include "bubblesort.h"
+#include "arraysort.h"
 
 // int removeDup(int arr[], int n);
 int duplicate(int arr[], int elements, int arr2[]);

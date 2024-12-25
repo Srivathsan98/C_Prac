@@ -16,3 +16,4 @@ char* resstr2;
 char caracter;
 bool check;
 int value;
+char** names;

@@ -98,4 +98,22 @@ void main()
         char *d = ",";
         split(str1, d);
     }
+    else if(option == 14)
+    {
+        printf("Enter number of elements: ");
+        scanf("%d", &value);
+        names = (char**)calloc(value, sizeof(char*));
+        for(int i = 0; i < value; i++)
+        {
+            names[i] = (char*)calloc(100, sizeof(char));
+            printf("Enter name %d: ", i + 1);
+            scanf("%s", names[i]);
+        }
+        stringsort(names, value);
+        for(int i = 0; i < value; i++)
+        {
+            printf("%s\n", names[i]);
+            free(names[i]);
+        }
+    }
 }

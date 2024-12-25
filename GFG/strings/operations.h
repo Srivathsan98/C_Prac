@@ -12,4 +12,5 @@ char* concat(char s1[], char s2[]);
 void nonzeros(char s1[]);
 void unicode(char s1[]);
 void split(char s1[], char dem[]);
+void stringsort(char** arr, int n);
 #endif

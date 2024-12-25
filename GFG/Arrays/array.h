@@ -8,10 +8,7 @@
 #include "arraycreate.h"
 #include "arrayprint.h"
 #include "arraycalculate.h"
-#include "bubblesort.h"
-#include "mergesort.h"
-#include "selectsort.h"
-#include "insertionsort.h"
+#include "arraysort.h"
 #include "operation.h"
 #include "rotation.h"
 
